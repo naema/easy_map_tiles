@@ -19,7 +19,7 @@ Or install it yourself as:
 
 ## Example
 
-[view example output](https://rawgit.com/naema/easy_map_tiles/blob/master/test.html)
+[view example output](https://rawgit.com/naema/easy_map_tiles/master/test.html)
 
 ## Usage
 
