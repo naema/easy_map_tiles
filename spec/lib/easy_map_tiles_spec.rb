@@ -23,5 +23,12 @@ describe EasyMapTiles do
     puts "Check resulting easy_map_tiles in test.html"
   end
 
-  # TODO: way more tests, including integration tests with capybara
+  it 'tile_div accepts a block' do
+    zoom_levels = [5,6,7,8,9,10]
+    div = EasyMapTiles.tile_div(39.915036, 116.404996, zoom_levels, satellite: false, marker: true) do
+      'Block Test'
+    end
+    expect(div).to match('Block Test')
+  end
+
 end

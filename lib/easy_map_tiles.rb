@@ -38,7 +38,7 @@ module EasyMapTiles
       end
     end
 
-    def tile_div(lat_deg, lon_deg, zoom_levels, opts={})
+    def tile_div(lat_deg, lon_deg, zoom_levels, opts={}, &block)
       satellite = opts[:satellite] || false
       marker = opts[:marker] || false
       zoom = most_fitting_zoom_level(lat_deg, lon_deg, zoom_levels)
@@ -69,7 +69,7 @@ module EasyMapTiles
         'width: 256px',
         'height: 256px'
       ] unless opts[:tile_styles] == false
-      "<div class='emt-tile' style='#{styles.join(';')}'>#{marker_div}</div>"
+      "<div class='emt-tile' style='#{styles.join(';')}'>#{marker_div}#{yield if block_given?}</div>"
     end
   end
 end
